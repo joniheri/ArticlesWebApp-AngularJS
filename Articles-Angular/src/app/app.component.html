@@ -1,31 +1,37 @@
 <div style="
-        background: #333333; 
-        height: 70px; 
-        padding-left: 20PX; 
-        align-items: center; 
-        display: flex; 
-        justify-content: left; 
-        margin-bottom: 20px;
-    ">
+    background: #333333; 
+    height: 70px; 
+    padding-left: 20PX; 
+    align-items: center; 
+    display: flex; 
+    justify-content: left; 
+    margin-bottom: 20px;
+">
     <h1 routerLink="/" style="
-            color: white; 
-            cursor: pointer; 
-            margin-right: 10px; 
-            border: 1px solid #ABABAB; 
-            border-radius: 5px; 
-            padding-left: 10px; 
-            padding-right: 10px; 
-            padding-top: 6px;
-            padding-bottom: 7px;
-        ">
-        Articles
+        color: white; 
+        cursor: pointer; 
+        margin-right: 10px; 
+        border: 1px solid #ABABAB; 
+        border-radius: 5px; 
+        padding-left: 10px; 
+        padding-right: 10px; 
+        padding-top: 6px;
+        padding-bottom: 7px;
+    ">
+        Articles Angular
+    </h1>
+    <h1 routerLink="/user" style="
+        color: white; 
+        cursor: pointer; 
+        margin-right: 10px; 
+        border: 1px solid #ABABAB; 
+        border-radius: 5px; 
+        padding-left: 10px; 
+        padding-right: 10px; 
+        padding-top: 6px;
+        padding-bottom: 7px;
+    ">
+        User Page
     </h1>
 </div>
-<h1>Welcome to my Angular Front End Web Developer</h1>
-<button routerLink="/login" style="width: 150px;background: green; color: white;font-size: 18px;">
-    Login
-</button>
-<button routerLink="/register" style="width: 150px;background: red; color: white;font-size: 18px;">
-    Register
-</button>
 <router-outlet></router-outlet>

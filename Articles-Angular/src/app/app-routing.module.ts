@@ -5,6 +5,11 @@ import { RegisterComponent } from './auth/register/register.component';
 
 const routes: Routes = [
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: '/login',
+  },
+  {
     path: 'login',
     component: LoginComponent,
   },
@@ -13,9 +18,9 @@ const routes: Routes = [
     component: RegisterComponent,
   },
   {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: '/login',
+    path: 'user',
+    loadChildren: () =>
+      import('./user/user.module').then((mod) => mod.UserModule),
   },
 ];
 
