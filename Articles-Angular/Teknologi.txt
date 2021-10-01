@@ -1,3 +1,3 @@
 #Technology
-- Angular 12
-- Material UI
+- Angular 12.x.x
+- Material UI 12.x.x

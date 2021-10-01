@@ -136,4 +136,18 @@ router.get("/transactions-user", getTransactionsHasManyUser);
 router.post("/pay", Pay);
 // EndAuthRoute
 
+// TodosRouter
+const {
+  getArticles,
+  getArticleById,
+} = require("../controllers/versi1/Article");
+
+router.get("/articles", getArticles);
+router.get("/article/:idParam", getArticleById);
+// router.post("/todos", addTodo);
+// router.patch("/updatetodo/:id", updateTodoPatch);
+// router.put("/updatetodo-put/:id", updateTodoPut);
+// router.delete("/deletetodo/:id", deleteTodo);
+// EndTodosRouter
+
 module.exports = router;

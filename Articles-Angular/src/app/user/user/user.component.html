@@ -1,23 +1,55 @@
-<mat-toolbar>This Is User page</mat-toolbar>
+<ng-container>
+    <mat-toolbar class="example-header">
+        <button mat-icon-button class="example-icon" (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span routerLink="/user/dashboard" style="cursor: pointer;">My Article Angular</span>
+        <div class="uk-width-expand"></div>
+        <span>User</span>
+    </mat-toolbar>
 
-<button routerLink="/user/dashboard" style="
-    padding-left: 15px; 
-    padding-right: 15px; 
-    padding-top: 10px;
-    padding-bottom: 10px;
-    cursor: pointer;
-">
-    Dashboard
-</button>
+    <mat-sidenav-container class="admin-container">
+        <mat-sidenav #sidenav mode="side" [position]="'start'" opened class="sidenav-left" [fixedInViewport]="true"
+            [fixedTopGap]="65" [fixedBottomGap]="0">
+            <mat-nav-list>
+                <mat-list-item routerLink="/user/dashboard" style="padding-right: 20px;">
+                    <span class="material-icons" style="margin-right: 20px;">
+                        home
+                    </span>
+                    Dashboard
+                </mat-list-item>
+                <mat-list-item routerLink="/user/article" style="padding-right: 20px;">
+                    <span class="material-icons" style="margin-right: 20px;">
+                        article
+                    </span>
+                    Articles
+                </mat-list-item>
+                <mat-list-item routerLink="/user/add-article" style="padding-right: 20px;">
+                    <span class="material-icons" style="margin-right: 20px;">
+                        note_add
+                    </span>
+                    Add Article
+                </mat-list-item>
+                <mat-list-item routerLink="/" style="padding-right: 20px;">
+                    <span class="material-icons" style="margin-right: 20px;">
+                        logout
+                    </span>
+                    Logout
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-sidenav>
 
-<button routerLink="/user/article" style="
-    padding-left: 15px; 
-    padding-right: 15px; 
-    padding-top: 10px;
-    padding-bottom: 10px;
-    cursor: pointer;
-">
-    Article
-</button>
+        <mat-sidenav #sidenav mode="side" [position]="'end'" class="example-sidenav" [fixedInViewport]="true"
+            [fixedTopGap]="60" [fixedBottomGap]="0">
+        </mat-sidenav>
 
-<router-outlet></router-outlet>
+        <!--sidenav content-->
+        <mat-sidenav-content style="padding: 20px; background-color: #ccc;">
+            <!--halaman-halaman tampil disini-->
+            <router-outlet></router-outlet>
+
+            <!--End-halaman-halaman tampil disini-->
+        </mat-sidenav-content>
+        <!--end sidenav content-->
+    </mat-sidenav-container>
+</ng-container>
