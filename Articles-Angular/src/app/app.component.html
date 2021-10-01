@@ -1,50 +1,35 @@
-<div style="
-    background: #333333; 
-    height: 70px; 
-    padding-left: 20PX; 
-    align-items: center; 
-    display: flex; 
-    justify-content: left; 
-    margin-bottom: 20px;
-">
-    <h1 routerLink="/" style="
-        color: white; 
-        cursor: pointer; 
-        margin-right: 10px; 
-        border: 1px solid #ABABAB; 
-        border-radius: 5px; 
-        padding-left: 10px; 
-        padding-right: 10px; 
-        padding-top: 6px;
-        padding-bottom: 7px;
+<mat-toolbar style="background-color:#232323; ">
+    <span routerLink="/" style="
+        cursor: pointer;
+        color: white;
+        padding-top: 10px; 
+        padding-bottom: 10px; 
+        padding-left: 15px; 
+        padding-right: 15px;
     ">
         Articles Angular
-    </h1>
-    <h1 routerLink="/public" style="
-        color: white; 
-        cursor: pointer; 
-        margin-right: 10px; 
-        border: 1px solid #ABABAB; 
-        border-radius: 5px; 
-        padding-left: 10px; 
-        padding-right: 10px; 
-        padding-top: 6px;
-        padding-bottom: 7px;
+    </span>
+    <span routerLink="/public" style="
+        cursor: pointer;
+        color: white;
+        padding-top: 10px; 
+        padding-bottom: 10px; 
+        padding-left: 15px; 
+        padding-right: 15px;
     ">
         Public Page
-    </h1>
-    <h1 routerLink="/user" style="
-        color: white; 
-        cursor: pointer; 
-        margin-right: 10px; 
-        border: 1px solid #ABABAB; 
-        border-radius: 5px; 
-        padding-left: 10px; 
-        padding-right: 10px; 
-        padding-top: 6px;
-        padding-bottom: 7px;
+    </span>
+    <span routerLink="/user" style="
+        cursor: pointer;
+        color: white;
+        padding-top: 10px; 
+        padding-bottom: 10px; 
+        padding-left: 15px; 
+        padding-right: 15px;
     ">
         User Page
-    </h1>
-</div>
+    </span>
+</mat-toolbar>
+
+
 <router-outlet></router-outlet>

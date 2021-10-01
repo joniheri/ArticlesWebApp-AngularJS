@@ -1,31 +1,28 @@
-<h1>Welcome to my Angular Front End Web Developer</h1>
-<button routerLink="/login" style="width: 150px;background: green; color: white;font-size: 18px;">
+<h1>Login Page</h1>
+
+<button routerLink="/login" mat-button style="width: 150px; font-size: 18px;">
     Login
 </button>
-<button routerLink="/register" style="width: 150px;background: red; color: white;font-size: 18px;">
+<button routerLink="/register" mat-button style="width: 150px; background: red; color: white; font-size: 18px;">
     Register
 </button>
 
-<h1>This is Login Page</h1>
-<form action="" style="margin-right: 30px;">
-    <input type="email" placeholder="Email" style="
-        border: 1px solid #ABABAB; 
-        border-radius: 5px;
-        width: 100%; 
-        height: 35px; 
-        padding-left: 10px; 
-        padding-right: 10px; 
-        margin-bottom: 15px;
-        font-size: 18px;
-    ">
-    <input type="password" placeholder="Password" style="
-        border: 1px solid #ABABAB; 
-        border-radius: 5px;
-        width: 100%; 
-        height: 35px; 
-        padding-left: 10px; 
-        padding-right: 10px; 
-        margin-bottom: 15px;
-        font-size: 18px;
-    ">
-</form>
+<mat-card class="example-card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Shiba Inu</mat-card-title>
+        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+        <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+    </mat-card-actions>
+</mat-card>

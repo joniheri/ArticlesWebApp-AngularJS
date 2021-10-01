@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { PublicComponent } from './public/public.component';
 
+// Import Material UI
+import { MaterialDesign } from '../material/material';
+
 const routes: Routes = [
   {
     path: '',
@@ -19,6 +22,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [HomeComponent, PublicComponent],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, RouterModule.forChild(routes), MaterialDesign],
 })
 export class PublicModule {}
