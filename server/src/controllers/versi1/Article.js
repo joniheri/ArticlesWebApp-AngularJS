@@ -75,16 +75,15 @@ exports.getArticleById = async (req, res) => {
 // End Function GetArticlesById
 
 // Function AddArtist
-exports.addArtist = async (req, res) => {
+exports.addArticle = async (req, res) => {
   try {
     const dataAdd = req.body; //Data will Added
 
     // ChekcValidationInput
     const schema = joi.object({
-      name: joi.string().min(1).required(),
-      old: joi.string().min(1).required(),
-      type: joi.string().min(2).required(),
-      startCareer: joi.string().min(4).required(),
+      title: joi.string().min(1).required(),
+      creatorName: joi.string().min(1).required(),
+      creatorDate: joi.string().min(2).required(),
     });
     const { error } = schema.validate(dataAdd);
     if (error) {
@@ -97,7 +96,7 @@ exports.addArtist = async (req, res) => {
     // EndChekcValidationInput
 
     // AddData
-    const dataAdded = await Artist.create(dataAdd);
+    const dataAdded = await Article.create(dataAdd);
     if (!dataAdded) {
       return res.send({
         status: "Response Failed",
@@ -108,7 +107,7 @@ exports.addArtist = async (req, res) => {
 
     // GetArtistById
     const idArtist = dataAdded.id;
-    const getData = await Artist.findOne({
+    const getData = await Article.findOne({
       where: {
         id: idArtist,
       },

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { UserComponent } from './user/user.component';
@@ -10,6 +11,10 @@ import { MaterialDesign } from '../material/material';
 // Component Pages
 import { ArticleComponent } from './article/article.component';
 import { AddArticleComponent } from './add-article/add-article.component';
+import { ProductComponent } from './product/product.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { DetailArticleComponent } from './detail-article/detail-article.component';
+import { DetailProductComponent } from './detail-product/detail-product.component';
 
 const routes: Routes = [
   {
@@ -28,6 +33,14 @@ const routes: Routes = [
         path: 'add-article',
         component: AddArticleComponent,
       },
+      {
+        path: 'product',
+        component: ProductComponent,
+      },
+      {
+        path: 'add-product',
+        component: AddProductComponent,
+      },
     ],
   },
 ];
@@ -38,7 +51,16 @@ const routes: Routes = [
     DashboardComponent,
     ArticleComponent,
     AddArticleComponent,
+    ProductComponent,
+    AddProductComponent,
+    DetailProductComponent,
+    DetailArticleComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), MaterialDesign],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    MaterialDesign,
+    FormsModule,
+  ],
 })
 export class UserModule {}

@@ -1,0 +1,214 @@
+<div class="uk-flex">
+    <mat-card class="uk-width-viewport">
+        <!-- Content Title -->
+        <div class="uk-flex">
+            <h1>{{title}}</h1>
+        </div>
+        <!-- Content Title -->
+
+        <mat-card-content style="padding-bottom: 30px; margin-bottom: 50px;">
+            <div class="uk-flex">
+                <h2>Data Product Object</h2>
+                <span class="uk-width-expand"></span>
+                <!-- <button mat-stroked-button style="margin-bottom: 10px;">Add Product</button> -->
+            </div>
+            <table class="uk-width-viewport mat-elevation-z8" style="padding-bottom: 30px;">
+                <thead style="background: #202020; color: #F5F5F5; font-size: 16px;">
+                    <th style="
+                        width: 60px; 
+                        text-align: center; 
+                        vertical-align: middle;  
+                        padding-top: 10px; 
+                        padding-bottom: 10px;
+                    ">
+                        No.
+                    </th>
+                    <th style="
+                        text-align: left; 
+                        vertical-align: middle; 
+                        padding-left: 10px; 
+                    ">
+                        Product Name
+                    </th>
+                    <th style="
+                        width: 120px; 
+                        text-align: center; 
+                        vertical-align: middle;
+                    ">
+                        Input Date
+                    </th>
+                    <th style="
+                        width: 100px; 
+                        text-align: center; 
+                        vertical-align: middle;
+                    ">
+                        Price
+                    </th>
+                    <th style="
+                        width: 200px; 
+                        text-align: center; 
+                        vertical-align: middle;
+                    ">
+                        Action
+                    </th>
+                </thead>
+                <br>
+                <tbody>
+                    <tr>
+                        <td style="text-align: center; vertical-align: middle;">{{dataProduct.id}}</td>
+                        <td style="vertical-align: middle; padding-left: 10px;">{{dataProduct.title}}</td>
+                        <td style="text-align: center; vertical-align: middle;">{{dataProduct.inputDate}}</td>
+                        <td style="text-align: center; vertical-align: middle;">{{dataProduct.price}}</td>
+                        <td style="
+                            text-align: center; 
+                            vertical-align: middle;
+                        ">
+                            <div style="display: flex; justify-content: center;">
+                                <button mat-raised-button style="margin-right: 10px;">Edit</button>
+                                <button mat-raised-button color="primary">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </mat-card-content>
+
+        <mat-card-content style="padding-bottom: 30px; margin-bottom: 50px;">
+            <div class="uk-flex">
+                <h2>Data Product Array1</h2>
+                <span class="uk-width-expand"></span>
+                <button routerLink="/user/add-product" mat-stroked-button style="margin-bottom: 10px;">
+                    Add Product
+                </button>
+            </div>
+            <table class="uk-width-viewport mat-elevation-z8" style="padding-bottom: 30px;">
+                <thead style="background: #202020; color: #F5F5F5; font-size: 16px;">
+                    <th style="
+                        width: 60px; 
+                        text-align: center; 
+                        vertical-align: middle;  
+                        padding-top: 10px; 
+                        padding-bottom: 10px;
+                    ">
+                        No.
+                    </th>
+                    <th style="
+                        text-align: left; 
+                        vertical-align: middle; 
+                        padding-left: 10px; 
+                    ">
+                        Product Name
+                    </th>
+                    <th style="
+                        width: 120px; 
+                        text-align: center; 
+                        vertical-align: middle;
+                    ">
+                        Input Date
+                    </th>
+                    <th style="
+                        width: 100px; 
+                        text-align: center; 
+                        vertical-align: middle;
+                    ">
+                        Price
+                    </th>
+                    <th style="
+                        width: 200px; 
+                        text-align: center; 
+                        vertical-align: middle;
+                    ">
+                        Action
+                    </th>
+                </thead>
+                <br>
+                <tbody>
+                    <tr *ngFor="let dataProduct of dataProductArray1">
+                        <td style="text-align: center; vertical-align: middle;">{{dataProduct.id}}</td>
+                        <td style="vertical-align: middle; padding-left: 10px;">{{dataProduct.title}}</td>
+                        <td style="text-align: center; vertical-align: middle;">{{dataProduct.inputDate}}</td>
+                        <td style="text-align: center; vertical-align: middle;">{{dataProduct.price}}</td>
+                        <td style="
+                            text-align: center; 
+                            vertical-align: middle;
+                        ">
+                            <div style="display: flex; justify-content: center;">
+                                <button mat-raised-button style="margin-right: 10px;">Edit</button>
+                                <button mat-raised-button color="primary">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </mat-card-content>
+
+        <mat-card-content style="padding-bottom: 30px; margin-bottom: 50px;">
+            <div class="uk-flex">
+                <h2>Data Product Array2</h2>
+                <span class="uk-width-expand"></span>
+                <button routerLink="/user/add-product" mat-stroked-button style="margin-bottom: 10px;">
+                    Add Product
+                </button>
+            </div>
+            <table class="uk-width-viewport mat-elevation-z8" style="padding-bottom: 30px;">
+                <thead style="background: #202020; color: #F5F5F5; font-size: 16px;">
+                    <th style="
+                        width: 60px; 
+                        text-align: center; 
+                        vertical-align: middle;  
+                        padding-top: 10px; 
+                        padding-bottom: 10px;
+                    ">
+                        No.
+                    </th>
+                    <th style="
+                        text-align: left; 
+                        vertical-align: middle; 
+                        padding-left: 10px; 
+                    ">
+                        Product Name
+                    </th>
+                    <th style="
+                        width: 120px; 
+                        text-align: center; 
+                        vertical-align: middle;
+                    ">
+                        Input Date
+                    </th>
+                    <th style="
+                        width: 100px; 
+                        text-align: center; 
+                        vertical-align: middle;
+                    ">
+                        Price
+                    </th>
+                    <th style="
+                        width: 200px; 
+                        text-align: center; 
+                        vertical-align: middle;
+                    ">
+                        Action
+                    </th>
+                </thead>
+                <br>
+                <tbody>
+                    <tr *ngFor="let dataProduct of dataProductArray2; let idx=index">
+                        <td style="text-align: center; vertical-align: middle;">{{idx+1}}</td>
+                        <td style="vertical-align: middle; padding-left: 10px;">{{dataProduct.title}}</td>
+                        <td style="text-align: center; vertical-align: middle;">{{dataProduct.inputDate}}</td>
+                        <td style="text-align: center; vertical-align: middle;">{{dataProduct.price}}</td>
+                        <td style="
+                            text-align: center; 
+                            vertical-align: middle;
+                        ">
+                            <div style="display: flex; justify-content: center;">
+                                <button mat-raised-button style="margin-right: 10px;">Edit</button>
+                                <button mat-raised-button color="primary" (click)="deleteProduct()">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </mat-card-content>
+    </mat-card>
+</div>

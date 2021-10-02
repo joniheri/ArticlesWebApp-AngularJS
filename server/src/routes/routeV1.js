@@ -140,11 +140,12 @@ router.post("/pay", Pay);
 const {
   getArticles,
   getArticleById,
+  addArticle,
 } = require("../controllers/versi1/Article");
 
 router.get("/articles", getArticles);
 router.get("/article/:idParam", getArticleById);
-// router.post("/todos", addTodo);
+router.post("/add-article", addArticle);
 // router.patch("/updatetodo/:id", updateTodoPatch);
 // router.put("/updatetodo-put/:id", updateTodoPut);
 // router.delete("/deletetodo/:id", deleteTodo);

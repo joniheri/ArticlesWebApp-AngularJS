@@ -1,70 +1,140 @@
 <div class="uk-flex">
-    <mat-card class="uk-width-viewport uk-height-viewport">
+    <mat-card class="uk-width-viewport">
         <div class="uk-flex">
-            <h3>Data Articles</h3>
+            <h1>Articles</h1>
         </div>
-        <mat-card-content>
-            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 uk-width-viewport">
 
-                <!--- Note that these columns can be defined in any order. The actual rendered columns are set as a property on the row definition" -->
-
-                <!-- Position Column -->
-                <ng-container matColumnDef="position">
-                    <th mat-header-cell *matHeaderCellDef style="
+        <mat-card-content style="padding-bottom: 30px; margin-bottom: 50px;">
+            <div class="uk-flex">
+                <h2>Data Books From API</h2>
+                <span class="uk-width-expand"></span>
+                <button mat-stroked-button style="margin-bottom: 10px;">Add Book</button>
+            </div>
+            <table class="uk-width-viewport mat-elevation-z8" style="padding-bottom: 30px;">
+                <thead style="background: #202020; color: #F5F5F5; font-size: 14px;">
+                    <th style="
+                        width: 60px; 
                         text-align: center; 
-                        width: 70px; 
-                        vertical-align: middle; 
-                        background: #202020; 
-                        color: #ffffff;
+                        vertical-align: middle;  
+                        padding-top: 10px; 
+                        padding-bottom: 10px;
                     ">
                         No.
                     </th>
-                    <td mat-cell *matCellDef="let element" style="text-align: center; vertical-align: middle;">
-                        {{element.position}}
-                    </td>
-                </ng-container>
-
-                <!-- Name Column -->
-                <ng-container matColumnDef="title">
-                    <th mat-header-cell *matHeaderCellDef style="
+                    <th style="
+                        text-align: left; 
                         vertical-align: middle; 
-                        background: #202020; 
-                        color: #ffffff;
+                        padding-left: 10px; 
                     ">
                         Title
                     </th>
-                    <td mat-cell *matCellDef="let element"> {{element.title}} </td>
-                </ng-container>
-
-                <!-- Name Column -->
-                <ng-container matColumnDef="name">
-                    <th mat-header-cell *matHeaderCellDef style="
+                    <th style="
+                        text-align: left; 
                         vertical-align: middle; 
-                        background: #202020; 
-                        color: #ffffff;
+                        padding-left: 10px; 
                     ">
-                        Name
+                        Author
                     </th>
-                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-                </ng-container>
-
-                <!-- Date Column -->
-                <ng-container matColumnDef="date">
-                    <th mat-header-cell *matHeaderCellDef style="
-                        text-align: center; 
+                    <th style="
                         width: 100px; 
-                        vertical-align: middle; 
-                        background: #202020; 
-                        color: #ffffff;
+                        text-align: center; 
+                        vertical-align: middle;
                     ">
-                        Date </th>
-                    <td mat-cell *matCellDef="let element" style="text-align: center; vertical-align: middle;">
-                        {{element.date}}
-                    </td>
-                </ng-container>
+                        Year
+                    </th>
+                    <th style="
+                        width: 200px; 
+                        text-align: center; 
+                        vertical-align: middle;
+                    ">
+                        Action
+                    </th>
+                </thead>
+                <br>
+                <tbody>
+                    <tr *ngFor="let data of dataBooksAPI; let idx=index">
+                        <td style="text-align: center; vertical-align: middle;">{{idx+1}}</td>
+                        <td style="vertical-align: middle; padding-left: 10px;">{{data.title}}</td>
+                        <td style="vertical-align: middle; padding-left: 10px;">{{data.author}}</td>
+                        <td style="text-align: center; vertical-align: middle;">{{data.year}}</td>
+                        <td style="
+                            text-align: center; 
+                            vertical-align: middle;
+                        ">
+                            <div style="display: flex; justify-content: center;">
+                                <button mat-raised-button style="margin-right: 10px;">Edit</button>
+                                <button mat-raised-button color="primary">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </mat-card-content>
 
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <mat-card-content style="padding-bottom: 30px; margin-bottom: 50px;">
+            <div class="uk-flex">
+                <h2>Data Article From API</h2>
+                <span class="uk-width-expand"></span>
+                <button mat-stroked-button style="margin-bottom: 10px;">Add Books</button>
+            </div>
+            <table class="uk-width-viewport mat-elevation-z8" style="padding-bottom: 30px;">
+                <thead style="background: #202020; color: #F5F5F5; font-size: 14px;">
+                    <th style="
+                        width: 60px; 
+                        text-align: center; 
+                        vertical-align: middle;  
+                        padding-top: 10px; 
+                        padding-bottom: 10px;
+                    ">
+                        No.
+                    </th>
+                    <th style="
+                        text-align: left; 
+                        vertical-align: middle; 
+                        padding-left: 10px; 
+                    ">
+                        Title
+                    </th>
+                    <th style="
+                        text-align: left; 
+                        vertical-align: middle; 
+                        padding-left: 10px; 
+                    ">
+                        Creator Name
+                    </th>
+                    <th style="
+                        width: 100px; 
+                        text-align: center; 
+                        vertical-align: middle;
+                    ">
+                        Creator Date
+                    </th>
+                    <th style="
+                        width: 200px; 
+                        text-align: center; 
+                        vertical-align: middle;
+                    ">
+                        Action
+                    </th>
+                </thead>
+                <br>
+                <tbody>
+                    <tr *ngFor="let data of dataArticleAPI; let idx=index">
+                        <td style="text-align: center; vertical-align: middle;">{{idx+1}}</td>
+                        <td style="vertical-align: middle; padding-left: 10px;">{{data.title}}</td>
+                        <td style="vertical-align: middle; padding-left: 10px;">{{data.creatorName}}</td>
+                        <td style="text-align: center; vertical-align: middle;">{{data.creatorDate}}</td>
+                        <td style="
+                            text-align: center; 
+                            vertical-align: middle;
+                        ">
+                            <div style="display: flex; justify-content: center;">
+                                <button mat-raised-button style="margin-right: 10px;">Edit</button>
+                                <button mat-raised-button color="primary">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </mat-card-content>
     </mat-card>

@@ -9,28 +9,29 @@
     </mat-toolbar>
 
     <mat-sidenav-container class="admin-container">
+
         <mat-sidenav #sidenav mode="side" [position]="'start'" opened class="sidenav-left" [fixedInViewport]="true"
             [fixedTopGap]="65" [fixedBottomGap]="0">
             <mat-nav-list>
-                <mat-list-item routerLink="/user/dashboard" style="padding-right: 20px;">
+                <mat-list-item routerLink="/user/dashboard">
                     <span class="material-icons" style="margin-right: 20px;">
                         home
                     </span>
                     Dashboard
                 </mat-list-item>
-                <mat-list-item routerLink="/user/article" style="padding-right: 20px;">
+                <mat-list-item routerLink="/user/article">
                     <span class="material-icons" style="margin-right: 20px;">
                         article
                     </span>
                     Articles
                 </mat-list-item>
-                <mat-list-item routerLink="/user/add-article" style="padding-right: 20px;">
+                <!-- <mat-list-item routerLink="/user/product">
                     <span class="material-icons" style="margin-right: 20px;">
-                        note_add
+                        store
                     </span>
-                    Add Article
-                </mat-list-item>
-                <mat-list-item routerLink="/" style="padding-right: 20px;">
+                    Product
+                </mat-list-item> -->
+                <mat-list-item routerLink="/">
                     <span class="material-icons" style="margin-right: 20px;">
                         logout
                     </span>
