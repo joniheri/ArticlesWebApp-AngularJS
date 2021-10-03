@@ -4,7 +4,7 @@
             <h1>Articles</h1>
         </div>
 
-        <mat-card-content style="padding-bottom: 30px; margin-bottom: 50px;">
+        <!-- <mat-card-content style="padding-bottom: 30px; margin-bottom: 50px;">
             <div class="uk-flex">
                 <h2>Data Books From API</h2>
                 <span class="uk-width-expand"></span>
@@ -63,19 +63,21 @@
                         ">
                             <div style="display: flex; justify-content: center;">
                                 <button mat-raised-button style="margin-right: 10px;">Edit</button>
-                                <button mat-raised-button color="primary">Delete</button>
+                                <button mat-raised-button color="warn">Delete</button>
                             </div>
                         </td>
                     </tr>
                 </tbody>
             </table>
-        </mat-card-content>
+        </mat-card-content> -->
 
         <mat-card-content style="padding-bottom: 30px; margin-bottom: 50px;">
             <div class="uk-flex">
                 <h2>Data Article From API</h2>
                 <span class="uk-width-expand"></span>
-                <button mat-stroked-button style="margin-bottom: 10px;">Add Books</button>
+                <button routerLink="/user/add-article" mat-stroked-button style="margin-bottom: 10px;">
+                    Add Article
+                </button>
             </div>
             <table class="uk-width-viewport mat-elevation-z8" style="padding-bottom: 30px;">
                 <thead style="background: #202020; color: #F5F5F5; font-size: 14px;">
@@ -129,8 +131,13 @@
                             vertical-align: middle;
                         ">
                             <div style="display: flex; justify-content: center;">
-                                <button mat-raised-button style="margin-right: 10px;">Edit</button>
-                                <button mat-raised-button color="primary">Delete</button>
+                                <button mat-raised-button style="margin-right: 10px;"
+                                    [routerLink]="['/update-article/',data.id]">
+                                    Edit
+                                </button>
+                                <button mat-raised-button color="warn" [routerLink]="['/delete-article/',data.id]">
+                                    Delete
+                                </button>
                             </div>
                         </td>
                     </tr>

@@ -141,14 +141,15 @@ const {
   getArticles,
   getArticleById,
   addArticle,
+  updateArtilce,
+  deleteArticle,
 } = require("../controllers/versi1/Article");
 
 router.get("/articles", getArticles);
 router.get("/article/:idParam", getArticleById);
 router.post("/add-article", addArticle);
-// router.patch("/updatetodo/:id", updateTodoPatch);
-// router.put("/updatetodo-put/:id", updateTodoPut);
-// router.delete("/deletetodo/:id", deleteTodo);
+router.patch("/update-article/:idParam", updateArtilce);
+router.delete("/delete-article/:idParam", deleteArticle);
 // EndTodosRouter
 
 module.exports = router;

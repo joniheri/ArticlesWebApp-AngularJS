@@ -36,7 +36,7 @@ exports.getArticles = async (req, res) => {
 };
 // End Function GetArticles
 
-//  Function GetArticlesById
+//  Function GetArticleById
 exports.getArticleById = async (req, res) => {
   try {
     const { idParam } = req.params;
@@ -72,9 +72,9 @@ exports.getArticleById = async (req, res) => {
     });
   }
 };
-// End Function GetArticlesById
+// End Function GetArticleById
 
-// Function AddArtist
+// Function AddArticle
 exports.addArticle = async (req, res) => {
   try {
     const dataAdd = req.body; //Data will Added
@@ -106,10 +106,10 @@ exports.addArticle = async (req, res) => {
     // EndAddData
 
     // GetArtistById
-    const idArtist = dataAdded.id;
+    const idData = dataAdded.id;
     const getData = await Article.findOne({
       where: {
-        id: idArtist,
+        id: idData,
       },
       attributes: {
         exclude: ["createdAt", "updatedAt"],
@@ -118,7 +118,7 @@ exports.addArticle = async (req, res) => {
     if (getData == null) {
       return res.send({
         status: "Response Failed",
-        message: `Data with id ${idArtist} Not Found!`,
+        message: `Data with id ${idData} Not Found!`,
         data: null,
       });
     }
@@ -137,20 +137,17 @@ exports.addArticle = async (req, res) => {
     });
   }
 };
-// End Function AddArtist
+// End Function AddArticle
 
-// Function UpdateArtist
-exports.updateArtist = async (req, res) => {
+// Function UpdateArticle
+exports.updateArtilce = async (req, res) => {
   try {
     const { idParam } = req.params;
 
     // CheckDataById
-    const getDataById = await Artist.findOne({
+    const getDataById = await Article.findOne({
       where: {
         id: idParam,
-      },
-      attributes: {
-        exclude: ["createdAt", "updatedAt"],
       },
     });
     if (getDataById == null) {
@@ -164,7 +161,7 @@ exports.updateArtist = async (req, res) => {
 
     // UpdateData
     const dataUpdate = req.body; //Data will updated
-    const dataUpdated = await Artist.update(dataUpdate, {
+    const dataUpdated = await Article.update(dataUpdate, {
       where: {
         id: idParam,
       },
@@ -179,7 +176,7 @@ exports.updateArtist = async (req, res) => {
     // EndUpdateData
 
     // getDataAfterUpdateById
-    const getDataAfterUpdateById = await Artist.findOne({
+    const getDataAfterUpdateById = await Article.findOne({
       where: {
         id: idParam,
       },
@@ -212,20 +209,17 @@ exports.updateArtist = async (req, res) => {
     });
   }
 };
-// End Function UpdateArtist
+// End Function UpdateArticle
 
-// Function DeleteArtist
-exports.deleteArtist = async (req, res) => {
+// Function DeleteArticle
+exports.deleteArticle = async (req, res) => {
   try {
     const { idParam } = req.params;
 
     // CheckDataById
-    const getDataById = await Artist.findOne({
+    const getDataById = await Article.findOne({
       where: {
         id: idParam,
-      },
-      attributes: {
-        exclude: ["createdAt", "updatedAt"],
       },
     });
     if (getDataById == null) {
@@ -238,7 +232,7 @@ exports.deleteArtist = async (req, res) => {
     // EndCheckDataById
 
     // DeleteData
-    const deleteData = await Artist.destroy({
+    const deleteData = await Article.destroy({
       where: {
         id: idParam,
       },
@@ -264,7 +258,7 @@ exports.deleteArtist = async (req, res) => {
     });
   }
 };
-// End Function DeleteArtist
+// End Function DeleteArticle
 
 // Function Template
 exports.templateFunction = async (req, res) => {
